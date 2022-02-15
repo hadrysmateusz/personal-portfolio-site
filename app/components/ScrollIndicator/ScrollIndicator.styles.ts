@@ -7,7 +7,6 @@ const bob = keyframes`
 
 export const ScrollIndicatorWrapper = styled.div`
   color: var(--color__accent);
-  margin-bottom: 35px;
 
   display: flex;
   justify-content: center;
@@ -18,4 +17,8 @@ export const ScrollIndicatorWrapper = styled.div`
   z-index: 100;
 
   animation: ease alternate 0.9s infinite both ${bob};
+  
+  a {
+    padding: var(--spacing__600);
+  }
 `
