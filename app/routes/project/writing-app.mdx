@@ -24,7 +24,7 @@ import organization2 from "~/assets/writing-app/writing-app-organization-2.png"
 import local1 from "~/assets/writing-app/writing-app-local.png"
 
 import { ProjectLayout } from "~/layout"
-import { PortfolioSection, GridList } from "~/components"
+import { PortfolioSection, GridList, ImageGrid } from "~/components"
 
 <PortfolioSection
   heading="History & Description"
@@ -45,22 +45,33 @@ import { PortfolioSection, GridList } from "~/components"
   </p>
 </PortfolioSection>
 
-<PortfolioSection heading="Tech Stack" id="stack" name="stack" marginTop="120px">
+<PortfolioSection
+  heading="Tech Stack"
+  id="stack"
+  name="stack"
+  marginTop="120px"
+>
   <p>
-    The frontend was built using TypeScript & React and was styled using styled-components. The project is built within a monorepo containing front-end & server-side code as well as a package for shared values and types, and another package for the electron desktop wrapper. The monorepo is managed with Yarn workspaces and later on Turborepo.
+    The frontend was built using TypeScript & React and was styled using
+    styled-components. The project is built within a monorepo containing
+    front-end & server-side code as well as a package for shared values and
+    types, and another package for the electron desktop wrapper. The monorepo is
+    managed with Yarn workspaces and later on Turborepo.
   </p>
   <p>
-    The project was designed to be cross-platform and although support for running it in the browser was dropped some time ago, I plan to bring it back along with a mobile version once the project is closer to release.
+    The project was designed to be cross-platform and although support for
+    running it in the browser was dropped some time ago, I plan to bring it back
+    along with a mobile version once the project is closer to release.
   </p>
   <p>
     Building a rich text-editor from scratch is an enourmous undertaking due to
-    many inconsistencies across devices, browsers, and input methods, which is why
-    I went with using the highly customizable Slate library. Eventually I migrated
-    to the Plate editor based on Slate which retains the customizability I needed,
-    while providing many useful features out-of-the-box.
+    many inconsistencies across devices, browsers, and input methods, which is
+    why I went with using the highly customizable Slate library. Eventually I
+    migrated to the Plate editor based on Slate which retains the
+    customizability I needed, while providing many useful features
+    out-of-the-box.
   </p>
   <p>The final stack includes among others:</p>
-
   <GridList>
     <li>TypeScript</li>
     <li>CouchDB & RxDB</li>
@@ -89,11 +100,10 @@ import { PortfolioSection, GridList } from "~/components"
     features, like tags. All cloud documents can also be easily exported to
     markdown files.
   </p>
-  <div className="desktop-mockup-grid">
-    <img src={cloud1} alt="" />
-    <img src={cloud2} alt="" />
-  </div>
-
+  <ImageGrid sources={[cloud1, cloud2]}>
+    <ImageGrid.Image src={cloud1} alt="" />
+    <ImageGrid.Image src={cloud2} alt="" />
+  </ImageGrid>
 </PortfolioSection>
 
 <PortfolioSection
@@ -103,16 +113,20 @@ import { PortfolioSection, GridList } from "~/components"
   marginTop="120px"
 >
   <p>
-    The other type of documents is local documents. Simply meaning reading and editing local markdown files through the same editor interface. Reading and writing as well as watching the filesystem for changes is done through Node.js in Electron’s main process.
+    The other type of documents is local documents. Simply meaning reading and
+    editing local markdown files through the same editor interface. Reading and
+    writing as well as watching the filesystem for changes is done through
+    Node.js in Electron’s main process.
   </p>
   <p>
-    Currently the only organizational feature for local documents is a reflection of the filesystem’s directory structure. The user can manually add some of their local directories to be included in the app’s library, which is then accessible within the app’s interface.
+    Currently the only organizational feature for local documents is a
+    reflection of the filesystem’s directory structure. The user can manually
+    add some of their local directories to be included in the app’s library,
+    which is then accessible within the app’s interface.
   </p>
-  <div className="desktop-mockup-grid single-column">
-    <img src={local1} alt="" />
-  </div>
-
-
+  <ImageGrid sources={[local1]}>
+    <ImageGrid.Image src={local1} alt="" />
+  </ImageGrid>
 </PortfolioSection>
 
 <PortfolioSection
@@ -131,10 +145,10 @@ import { PortfolioSection, GridList } from "~/components"
     drag-and-drop tought me a lot about storing user-reorderable data in a
     database and the complexities involved.
   </p>
-  <div className="desktop-mockup-grid">
-    <img src={organization1} alt="" />
-    <img src={organization2} alt="" />
-  </div>
+  <ImageGrid sources={[organization1, organization2]}>
+    <ImageGrid.Image src={organization1} alt="" />
+    <ImageGrid.Image src={organization2} alt="" />
+  </ImageGrid>
 </PortfolioSection>
 
 <PortfolioSection
@@ -144,15 +158,15 @@ import { PortfolioSection, GridList } from "~/components"
   marginTop="120px"
 >
   <p>
-    Every pannel can be toggled and resized to allow every user to adjust it to their needs and reduce clutter when writing.
+    Every pannel can be toggled and resized to allow every user to adjust it to
+    their needs and reduce clutter when writing.
   </p>
-
-  <div className="desktop-mockup-grid">
-    <img src={ui1} alt="" />
-    <img src={ui2} alt="" />
-    <img src={ui3} alt="" />
-    <img src={ui4} alt="" />
-  </div>
+  <ImageGrid sources={[ui1, ui2, ui3, ui4]}>
+    <ImageGrid.Image src={ui1} alt="" />
+    <ImageGrid.Image src={ui2} alt="" />
+    <ImageGrid.Image src={ui3} alt="" />
+    <ImageGrid.Image src={ui4} alt="" />
+  </ImageGrid>
 </PortfolioSection>
 
 export default ({ children }) => (
