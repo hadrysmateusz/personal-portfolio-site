@@ -11,7 +11,7 @@ const layoutStyles = (props: IWithLayoutType) => {
       return css`
         ${breakpoints.from.xs`
           grid-template-columns: repeat(2, 1fr);
-          gap: var(--spacing__300);
+          // gap: var(--spacing__300);
         `}
         ${breakpoints.from.xl`margin: 0 -160px;`}
       `
@@ -30,6 +30,10 @@ export const ImageGridWrapper = styled.div<{
   display: grid;
   gap: var(--spacing__400);
   margin-top: var(--spacing__700);
+  
+  img {
+    cursor: zoom-in;
+  }
 
-  ${layoutStyles}
+  ${layoutStyles};
 `
