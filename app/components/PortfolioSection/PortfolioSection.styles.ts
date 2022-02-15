@@ -2,6 +2,8 @@ import styled from "styled-components"
 
 export const PortfolioSectionWrapper = styled.section<{ marginTop: string }>`
   margin-top: ${(p) => p.marginTop};
+  scroll-margin-top: calc(var(--page_header_height) + var(--spacing__800));
+  
 
   .section-name {
     font-size: var(--font_size__400);
@@ -13,8 +15,8 @@ export const PortfolioSectionWrapper = styled.section<{ marginTop: string }>`
     font-size: var(--font_size__700);
     font-weight: 700;
 
-    margin-top: 13px;
-    margin-bottom: 26px;
+    margin-top: var(--spacing__300);
+    margin-bottom: var(--spacing__400);
   }
 
   .content-container {

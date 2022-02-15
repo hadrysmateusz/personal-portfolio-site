@@ -1,38 +1,57 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { ProjectsViewWrapper } from "./ProjectsView.styles"
 import { ProjectCard } from "~/components"
+import { usePositionManagerDispatch } from "~/components/PositionManager"
+import { useInView } from "react-intersection-observer"
+import writingApp1 from "~/assets/writing-app/writing-app-card.png"
+import streetzone1 from "~/assets/streetzone/streetzone-card.png"
 
-interface ProjectsViewProps {
-
-}
+interface ProjectsViewProps {}
 
 export const ProjectsView: React.FC<ProjectsViewProps> = () => {
+  const positionManagerDispatch = usePositionManagerDispatch()
+
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0.15,
+  })
+
+  useEffect(() => {
+    positionManagerDispatch({
+      type: "set-visibility",
+      section: "projects",
+      value: inView,
+    })
+  }, [inView, positionManagerDispatch])
+
   return (
-    <ProjectsViewWrapper>
+    <ProjectsViewWrapper ref={ref}>
       <p>
-        I love tinkering with web technologies and creating useful things
-        with them. Over my 5 year journey with web development, I've created
-        many full-stack projects, some of which are listed below:
+        I love tinkering with web technologies and creating useful things with
+        them. Over my 5 year journey with web development, I've created many
+        full-stack projects, some of which are listed below:
       </p>
-      <ul>
+      <ul className="projects-list">
         <ProjectCard
           name="Unnamed Writing App"
+          slug="writing-app"
           techStack={["TypeScript", "Electron", "AWS & CouchDB"]}
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eos eveniet nostrum veritatis. Aliquam, delectus dicta distinctio provident quam rem ut vero"
-          imgSrc="https://picsum.photos/550/380"
+          description="Rich-text editor with full offline support and cloud-syncing as well as local file editing functionality. Built with electron."
+          imgSrc={writingApp1}
         />
         <ProjectCard
           name="StreetZone"
+          slug="streetzone"
           techStack={["React", "Firebase", "Algolia Search"]}
           description="A community for Streetwear enthusiasts. Including a marketplace, blog, in-app messaging, email & social authentication."
-          imgSrc="https://picsum.photos/550/380"
+          imgSrc={streetzone1}
         />
-        <ProjectCard
-          name="Vivaldi Thumbnail Generator"
-          techStack={["React", "Styled-Components"]}
-          description="Thumbnail image generator for the Vivaldi browser. Creates customisable images entirely on the client-side using logos selected by the user."
-          imgSrc="https://picsum.photos/550/380"
-        />
+        {/*<ProjectCard*/}
+        {/*  name="Vivaldi Thumbnail Generator"*/}
+        {/*  techStack={["React", "Styled-Components"]}*/}
+        {/*  description="Thumbnail image generator for the Vivaldi browser. Creates customisable images entirely on the client-side using logos selected by the user."*/}
+        {/*  imgSrc="https://picsum.photos/550/380"*/}
+        {/*/>*/}
       </ul>
     </ProjectsViewWrapper>
   )

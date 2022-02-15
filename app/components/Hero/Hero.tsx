@@ -1,5 +1,5 @@
 import React from "react"
-import { HeroWrapper, SideNav } from "./Hero.styles"
+import { HeroWrapper } from "./Hero.styles"
 import { ScrollIndicator } from "~/components"
 import { ButtonContainer, LinkButton } from "~/components/LinkButton"
 
@@ -16,31 +16,15 @@ export const Hero: React.FC<HeroProps> = () => {
           specialise in creating web applications with <strong>React.js</strong>
         </p>
         <ButtonContainer>
-          <LinkButton to="/" variant="primary">
+          <LinkButton to="#projects" variant="primary">
             My Projects
           </LinkButton>
-          <LinkButton to="/" variant="secondary">
+          <LinkButton to="#about" variant="secondary">
             About Me
           </LinkButton>
         </ButtonContainer>
-        <ScrollIndicator />
+        <ScrollIndicator linkTo="#about"/>
       </div>
-      <SideNav>
-        <ul>
-          <li>
-            <a href="">About</a>
-          </li>
-          <li>
-            <a href="">Skills</a>
-          </li>
-          <li className="active">
-            <a href="">Projects</a>
-          </li>
-          <li>
-            <a href="">Contact</a>
-          </li>
-        </ul>
-      </SideNav>
     </HeroWrapper>
   )
 }

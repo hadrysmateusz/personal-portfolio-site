@@ -98,7 +98,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
     font-size: var(--font_size__500);
-    line-height: 1.5;
+    line-height: 1.6;
     
     background: var(--color__background);
     color: #ffffff;
@@ -116,5 +116,14 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 `
+
+const reveal = keyframes`
+  from { opacity: 0 }
+  to { opacity: 1 }
+`
+
+export const keyframeAnimations = {
+  reveal,
+}
 
 export default GlobalStyles

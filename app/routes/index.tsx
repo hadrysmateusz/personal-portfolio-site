@@ -1,36 +1,28 @@
-import {
-  Hero,
-  PageContainer,
-  PageHeader,
-  SkillsView,
-} from "~/components"
+import { Hero, PageContainer, PageHeader, SkillsView } from "~/components"
 import { PortfolioSection } from "~/components/PortfolioSection/PortfolioSection"
 import { ProjectsView } from "~/components/ProjectsView/ProjectsView"
 import { Footer } from "~/components/Footer/Footer"
+import { PositionManager } from "~/components/PositionManager"
+import { AboutView } from "~/components/AboutView/AboutView"
+import { SideNav } from "~/components/SideNav"
+import { CurrentSectionIndicator } from "~/components/CurrentSectionIndicator"
 
 export default function Index() {
   return (
-    <div>
+    <PositionManager>
       <PageHeader />
+      <SideNav />
+      <CurrentSectionIndicator />
       <PageContainer>
         <Hero />
-        <PortfolioSection name="About" heading="Who am I?" marginTop="145px">
-          <p>
-            I'm a 22-year-old web developer from Poland. I'm very passionate
-            about programming and design.
-          </p>
-          <p>
-            I was introduced to web development in high school. It was the
-            perfect way to combine both of my interests.
-          </p>
-          <p>
-            I'm constantly learning more and experimenting with new technologies
-          </p>
+        <PortfolioSection id="about" name="About" heading="Who am I?" marginTop="145px">
+          <AboutView />
         </PortfolioSection>
-        <PortfolioSection name="Skills" heading="My Skills" marginTop="290px">
+        <PortfolioSection id="skills" name="Skills" heading="My Skills" marginTop="290px">
           <SkillsView />
         </PortfolioSection>
         <PortfolioSection
+          id="projects"
           name="Projects"
           heading="Some of my Work"
           marginTop="360px"
@@ -39,6 +31,6 @@ export default function Index() {
         </PortfolioSection>
       </PageContainer>
       <Footer />
-    </div>
+    </PositionManager>
   )
 }

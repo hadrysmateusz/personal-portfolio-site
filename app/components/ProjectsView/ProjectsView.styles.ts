@@ -1,11 +1,11 @@
 import styled from "styled-components"
 
 export const ProjectsViewWrapper = styled.div`
-  ul {
+  ul.projects-list {
     display: grid;
-    gap: 40px;
+    gap: var(--spacing__700);
+    margin: var(--spacing__600) 0;
+    
     list-style: none;
-    li {
-    }
   }
 `

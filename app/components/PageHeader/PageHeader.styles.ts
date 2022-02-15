@@ -1,9 +1,11 @@
 import styled from "styled-components"
+import { breakpoints } from "~/components/Breakpoints"
+import { keyframeAnimations } from "~/components/GlobalStyles"
 
 export const PageHeaderWrapper = styled.nav`
   width: 100%;
   height: var(--page_header_height);
-  padding: 0 42px;
+  padding: 0 var(--spacing__500);
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -25,7 +27,7 @@ export const PageHeaderWrapper = styled.nav`
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    gap: 31px;
+    gap: var(--spacing__500);
 
     li {
       display: flex;
@@ -42,7 +44,8 @@ export const PageHeaderWrapper = styled.nav`
     top: 0;
     left: 0;
 
-    display: flex;
+    display: none;
+    ${breakpoints.from.sm`display: flex;`}
     align-items: center;
     justify-content: center;
 
@@ -51,6 +54,8 @@ export const PageHeaderWrapper = styled.nav`
     pointer-events: none;
 
     .name-inner {
+      animation: ease 0.9s both ${keyframeAnimations.reveal};
+
       pointer-events: all;
     }
   }
