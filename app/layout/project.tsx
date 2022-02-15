@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { ProjectMarkdownAttributes } from "~/project"
-import { ButtonContainer, LinkButton } from "~/components/LinkButton"
+import { ButtonContainer, ExternalLinkButton } from "~/components/LinkButton"
 import { ImageGrid } from "~/components/ImageGrid"
 
 export const ProjectLayout = ({
@@ -28,14 +28,15 @@ export const ProjectLayout = ({
         </ul>
         <p className="short-description">{attributes.shortDescription}</p>
         <ButtonContainer>
-          {/* TODO: Use a button that's a regular a tag and not internal link */}
           {attributes.liveLink ? (
-            <LinkButton to={attributes.liveLink} variant="primary">
+            <ExternalLinkButton href={attributes.liveLink} variant="primary">
               Go to website
-            </LinkButton>
+            </ExternalLinkButton>
           ) : null}
           {attributes.codeLink ? (
-            <LinkButton to={attributes.codeLink}>View Code</LinkButton>
+            <ExternalLinkButton href={attributes.codeLink}>
+              View Code
+            </ExternalLinkButton>
           ) : null}
         </ButtonContainer>
       </div>
