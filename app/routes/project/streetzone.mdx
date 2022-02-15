@@ -1,0 +1,179 @@
+---
+name: Streetzone
+workInProgress: false
+shortDescription: Community hub for Streetwear enthusiasts. Including a marketplace, blog, instant messaging, email and social authentication, and more.
+projectType: Web App
+role: Full-Stack Development & Design
+year: 2018-2019
+liveLink: https://streetwear-app.web.app
+codeLink: https://github.com/hadrysmateusz/streetzone
+---
+
+import mainImg from "~/assets/streetzone/streetzone-main.png"
+import mobile1 from "~/assets/streetzone/streetzone-mobile-1.png"
+import mobile2 from "~/assets/streetzone/streetzone-mobile-2.png"
+import mobile3 from "~/assets/streetzone/streetzone-mobile-3.png"
+
+import desktop1 from "~/assets/streetzone/streetzone-desktop-blog-1.png"
+import desktop2 from "~/assets/streetzone/streetzone-desktop-blog-2.png"
+import desktop3 from "~/assets/streetzone/streetzone-desktop-blog-3.png"
+import desktop4 from "~/assets/streetzone/streetzone-desktop-blog-4.png"
+
+import marketplace1 from "~/assets/streetzone/streetzone-desktop-marketplace-1.png"
+import marketplace2 from "~/assets/streetzone/streetzone-desktop-marketplace-2.png"
+
+import messagingMockup from "~/assets/streetzone/streetzone-messaging-mockup.png"
+
+import { ProjectLayout } from "~/layout"
+import { PortfolioSection, GridList } from "~/components"
+
+<PortfolioSection
+  heading="History & Description"
+  id="overview"
+  name="overview"
+  marginTop="120px"
+>
+  <p>
+    This project started as a simple marketplace for enthusiasts of streetwear
+    with a blog to drive traffic. It quickly expanded into a full community hub
+    with rich user-interactions like follows, notifications, and real-time
+    messaging.
+  </p>
+  <p>
+    The website was designed and solo developed by me from October 2018 to
+    September 2019. It is currently being rewritten to use TypeScript.
+  </p>
+</PortfolioSection>
+
+<PortfolioSection heading="Tech Stack" id="stack" name="stack" marginTop="120px">
+  <p>
+    The frontend was built using JavaScript & React and was styled using Sass, which was eventually replaced by styled-components.
+  </p>
+  <p>
+    Initially, the backend used Amazon Web Services including DynamoDB, S3, Cognito, and Lambda. Eventually DynamoDB proved unfit for this project, so I migrated the backend to Firebase and its Firestore database, which provided a better pricing model, simpler API, subscriptions, and more.
+  </p>
+  <p>The final stack includes among others:</p>
+
+  <GridList>
+    <li>JavaScript & TypeScript</li>
+    <li>styled-components</li>
+    <li>Algolia Search</li>
+    <li>React</li>
+    <li>Firebase</li>
+    <li>Axios</li>
+  </GridList>
+</PortfolioSection>
+
+<PortfolioSection
+  heading="Marketplace"
+  id="features-marketplace"
+  name="features"
+  marginTop="120px"
+>
+  <p>
+    The marketplace, like all other parts of the site use Algolia search
+    indexes, kept in sync by Firebase Cloud Functions for full-text search,
+    filtering, and sorting.
+  </p>
+  <p>
+    Logged-in users looking to sell can list their items for sale and buy
+    different promotional tools like “bumps” and home page slots. Users looking
+    to buy can contact owners of items they want using one of their listed
+    contact methods or the built in in-app messaging solution.
+  </p>
+  <div className="desktop-mockup-grid">
+    <img src={marketplace1} alt="" />
+    <img src={marketplace2} alt="" />
+  </div>
+</PortfolioSection>
+
+<PortfolioSection
+  heading="Real-Time Messaging"
+  id="features-messaging"
+  name="features"
+  marginTop="120px"
+>
+  <p>
+    Users looking to buy can contact owners of items they want using one of
+    their listed contact methods or the built in in-app messaging solution. If
+    enabled by the user, receiving a message will send a browser notification as
+    well as display an unread badge.
+  </p>
+  <p>
+    Previously contacted users are kept in history for quick access. Additional
+    care was put into making the messaging section intuitive and familiar on
+    mobile devices.
+  </p>
+  <div className="desktop-mockup-grid single-column">
+    <img src={messagingMockup} alt="" />
+  </div>
+</PortfolioSection>
+
+<PortfolioSection
+  heading="Blog"
+  id="features-blog"
+  name="features"
+  marginTop="120px"
+>
+  <p>
+    The website has an integrated blog with categorized and tagged posts,
+    searchable using Algolia. The posts are written in markdown and added via a
+    custom admin interface.
+  </p>
+
+
+
+<div className="desktop-mockup-grid">
+  <img src={desktop1} alt="" />
+  <img src={desktop2} alt="" />
+  <img src={desktop3} alt="" />
+  <img src={desktop4} alt="" />
+</div>
+
+</PortfolioSection>
+
+<PortfolioSection
+  heading="Responsive Web Design"
+  id="features-rwd"
+  name="features"
+  marginTop="120px"
+>
+  <p>
+    The entire website was created with mobile devices in mind and works on
+    screens of any dimensions. A combination of media queries and modern layout
+    methods like flexbox and CSS grid were used to achieve this. Additional care
+    was put into making touch input a first-class citizen, with e.g. swipable
+    carousels.
+  </p>
+  <div className="mobile-mockup-list">
+    <img src={mobile1} alt="" />
+    <img src={mobile2} alt="" />
+    <img src={mobile3} alt="" />
+  </div>
+</PortfolioSection>
+
+<PortfolioSection
+  heading="Lessons Learned"
+  id="lessons"
+  name="lessons"
+  marginTop="120px"
+>
+  <p>
+    Although I never launched this project publicly, the hands-on experience of
+    building a big app like this from scratch was well worth it. I’ve grown my
+    skills writing React components, choosing technologies to fit the needs of a
+    project, and so much more.
+  </p>
+  <p>
+    Coming back to rewrite this app in TypeScript taught me the value of writing
+    clean, self-documenting code, which has become my priority going forward.
+  </p>
+</PortfolioSection>
+
+export default ({ children }) => (
+  <ProjectLayout attributes={attributes} mainImage={mainImg}>
+    {children}
+  </ProjectLayout>
+)
+
+>

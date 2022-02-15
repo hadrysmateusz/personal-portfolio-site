@@ -1,0 +1,162 @@
+---
+name: writing-app
+workInProgress: true
+shortDescription: Desktop app for writers and bloggers. Local markdown file editing and offline editing of cloud-synced documents. Groups, tags, outlines, tabs, rich-text and more.
+projectType: Desktop App
+role: Full-Stack Development & Design
+year: 2020-2022
+codeLink: https://github.com/hadrysmateusz/writing-app
+---
+
+import mainImg from "~/assets/writing-app/writing-app-main.png"
+
+import cloud1 from "~/assets/writing-app/writing-app-cloud-1.png"
+import cloud2 from "~/assets/writing-app/writing-app-cloud-2.png"
+
+import ui1 from "~/assets/writing-app/writing-app-ui-1.png"
+import ui2 from "~/assets/writing-app/writing-app-ui-2.png"
+import ui3 from "~/assets/writing-app/writing-app-ui-3.png"
+import ui4 from "~/assets/writing-app/writing-app-ui-4.png"
+
+import organization1 from "~/assets/writing-app/writing-app-organization-1.png"
+import organization2 from "~/assets/writing-app/writing-app-organization-2.png"
+
+import local1 from "~/assets/writing-app/writing-app-local.png"
+
+import { ProjectLayout } from "~/layout"
+import { PortfolioSection, GridList } from "~/components"
+
+<PortfolioSection
+  heading="History & Description"
+  id="overview"
+  name="overview"
+  marginTop="120px"
+>
+  <p>
+    I created this project out of a personal need for good writing software.
+    When I started sharing what I’ve learned in blog posts on Medium and Dev.to,
+    I needed a place I could write and keep all of my blog posts organized.
+  </p>
+  <p>
+    I went through many design iterations and coded the base of the app from
+    February to October 2020. I then took a break to pursue other interests and
+    came back to work on the project around August 2021. It is still a work in
+    progress though with new features being added every month.
+  </p>
+</PortfolioSection>
+
+<PortfolioSection heading="Tech Stack" id="stack" name="stack" marginTop="120px">
+  <p>
+    The frontend was built using TypeScript & React and was styled using styled-components. The project is built within a monorepo containing front-end & server-side code as well as a package for shared values and types, and another package for the electron desktop wrapper. The monorepo is managed with Yarn workspaces and later on Turborepo.
+  </p>
+  <p>
+    The project was designed to be cross-platform and although support for running it in the browser was dropped some time ago, I plan to bring it back along with a mobile version once the project is closer to release.
+  </p>
+  <p>
+    Building a rich text-editor from scratch is an enourmous undertaking due to
+    many inconsistencies across devices, browsers, and input methods, which is why
+    I went with using the highly customizable Slate library. Eventually I migrated
+    to the Plate editor based on Slate which retains the customizability I needed,
+    while providing many useful features out-of-the-box.
+  </p>
+  <p>The final stack includes among others:</p>
+
+  <GridList>
+    <li>TypeScript</li>
+    <li>CouchDB & RxDB</li>
+    <li>Monorepo</li>
+    <li>React</li>
+    <li>AWS</li>
+    <li>styled-components</li>
+  </GridList>
+</PortfolioSection>
+
+<PortfolioSection
+  heading="Cloud Documents, Offline Editing & Sync"
+  id="features-cloud"
+  name="features"
+  marginTop="120px"
+>
+  <p>
+    Both offline editing and cloud sync were key features for this project which
+    made choosing the tech stack challenging.
+  </p>
+  <p>
+    Data-ownership was another important aspect for me which made me go with a
+    hybrid approach. The editor supports two types of documents: cloud and
+    local. The former being stored in CouchDB and synced with an external server
+    and the user’s other devices. The cloud documents also support additional
+    features, like tags. All cloud documents can also be easily exported to
+    markdown files.
+  </p>
+  <div className="desktop-mockup-grid">
+    <img src={cloud1} alt="" />
+    <img src={cloud2} alt="" />
+  </div>
+
+</PortfolioSection>
+
+<PortfolioSection
+  heading="Editing Local Markdown Documents"
+  id="features-local"
+  name="features"
+  marginTop="120px"
+>
+  <p>
+    The other type of documents is local documents. Simply meaning reading and editing local markdown files through the same editor interface. Reading and writing as well as watching the filesystem for changes is done through Node.js in Electron’s main process.
+  </p>
+  <p>
+    Currently the only organizational feature for local documents is a reflection of the filesystem’s directory structure. The user can manually add some of their local directories to be included in the app’s library, which is then accessible within the app’s interface.
+  </p>
+  <div className="desktop-mockup-grid single-column">
+    <img src={local1} alt="" />
+  </div>
+
+
+</PortfolioSection>
+
+<PortfolioSection
+  heading="Nested Groups, Tags & Search"
+  id="features-organization"
+  name="features"
+  marginTop="120px"
+>
+  <p>
+    Rich organizational features like nested groups, tags, and search allow
+    users to easily find the document they need and stay focused on writing.
+  </p>
+  <p>
+    The app supports two document list types: a flat list and a nested one, with
+    collapsible sections. Building the tree view for manging groups with
+    drag-and-drop tought me a lot about storing user-reorderable data in a
+    database and the complexities involved.
+  </p>
+  <div className="desktop-mockup-grid">
+    <img src={organization1} alt="" />
+    <img src={organization2} alt="" />
+  </div>
+</PortfolioSection>
+
+<PortfolioSection
+  heading="Customizable Interface"
+  id="features-customizable-ui"
+  name="features"
+  marginTop="120px"
+>
+  <p>
+    Every pannel can be toggled and resized to allow every user to adjust it to their needs and reduce clutter when writing.
+  </p>
+
+  <div className="desktop-mockup-grid">
+    <img src={ui1} alt="" />
+    <img src={ui2} alt="" />
+    <img src={ui3} alt="" />
+    <img src={ui4} alt="" />
+  </div>
+</PortfolioSection>
+
+export default ({ children }) => (
+  <ProjectLayout attributes={attributes} mainImage={mainImg}>
+    {children}
+  </ProjectLayout>
+)
