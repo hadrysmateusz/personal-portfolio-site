@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
 export const FooterWrapper = styled.footer`
-  margin-top: 220px;
+  margin-top: 150px;
   width: 100%;
   height: var(--page_header_height);
-  padding: 0 42px;
+  padding: 0 var(--spacing__500);
 
   background: #19181f;
   font-size: var(--font_size__400);

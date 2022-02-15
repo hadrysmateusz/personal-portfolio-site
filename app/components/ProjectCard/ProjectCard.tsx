@@ -4,6 +4,7 @@ import { ButtonContainer, LinkButton } from "~/components/LinkButton"
 
 interface ProjectCardProps {
   name: string
+  slug: string
   techStack: string[]
   description: string
   imgSrc: string
@@ -11,6 +12,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   name,
+  slug,
   techStack,
   description,
   imgSrc,
@@ -18,20 +20,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <ProjectCardWrapper>
       <div className="meta-container">
-        <h3>{name}</h3>
+        <h3 className="project-name">{name}</h3>
         <ul className="tech-stack">
           {techStack.map((tech) => (
             <li key={tech}>{tech}</li>
           ))}
         </ul>
-        <p>{description}</p>
+        <p className="project-description">{description}</p>
         <ButtonContainer>
-          <LinkButton to="/" variant="primary">
+          <LinkButton to={`/project/${slug}`} variant="primary">
             View Project
           </LinkButton>
         </ButtonContainer>
       </div>
-      <img src={imgSrc} alt="" />
+      <img className="project-image" src={imgSrc} alt="" />
     </ProjectCardWrapper>
   )
 }
