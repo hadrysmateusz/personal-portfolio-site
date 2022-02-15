@@ -10,6 +10,7 @@ codeLink: https://github.com/hadrysmateusz/streetzone
 ---
 
 import mainImg from "~/assets/streetzone/streetzone-main.png"
+
 import mobile1 from "~/assets/streetzone/streetzone-mobile-1.png"
 import mobile2 from "~/assets/streetzone/streetzone-mobile-2.png"
 import mobile3 from "~/assets/streetzone/streetzone-mobile-3.png"
@@ -25,7 +26,7 @@ import marketplace2 from "~/assets/streetzone/streetzone-desktop-marketplace-2.p
 import messagingMockup from "~/assets/streetzone/streetzone-messaging-mockup.png"
 
 import { ProjectLayout } from "~/layout"
-import { PortfolioSection, GridList } from "~/components"
+import { PortfolioSection, GridList, ImageGrid } from "~/components"
 
 <PortfolioSection
   heading="History & Description"
@@ -45,15 +46,23 @@ import { PortfolioSection, GridList } from "~/components"
   </p>
 </PortfolioSection>
 
-<PortfolioSection heading="Tech Stack" id="stack" name="stack" marginTop="120px">
+<PortfolioSection
+  heading="Tech Stack"
+  id="stack"
+  name="stack"
+  marginTop="120px"
+>
   <p>
-    The frontend was built using JavaScript & React and was styled using Sass, which was eventually replaced by styled-components.
+    The frontend was built using JavaScript & React and was styled using Sass,
+    which was eventually replaced by styled-components.
   </p>
   <p>
-    Initially, the backend used Amazon Web Services including DynamoDB, S3, Cognito, and Lambda. Eventually DynamoDB proved unfit for this project, so I migrated the backend to Firebase and its Firestore database, which provided a better pricing model, simpler API, subscriptions, and more.
+    Initially, the backend used Amazon Web Services including DynamoDB, S3,
+    Cognito, and Lambda. Eventually DynamoDB proved unfit for this project, so I
+    migrated the backend to Firebase and its Firestore database, which provided
+    a better pricing model, simpler API, subscriptions, and more.
   </p>
   <p>The final stack includes among others:</p>
-
   <GridList>
     <li>JavaScript & TypeScript</li>
     <li>styled-components</li>
@@ -81,12 +90,11 @@ import { PortfolioSection, GridList } from "~/components"
     to buy can contact owners of items they want using one of their listed
     contact methods or the built in in-app messaging solution.
   </p>
-  <div className="desktop-mockup-grid">
-    <img src={marketplace1} alt="" />
-    <img src={marketplace2} alt="" />
-  </div>
+  <ImageGrid sources={[marketplace1, marketplace2]}>
+    <ImageGrid.Image src={marketplace1} alt="" />
+    <ImageGrid.Image src={marketplace2} alt="" />
+  </ImageGrid>
 </PortfolioSection>
-
 <PortfolioSection
   heading="Real-Time Messaging"
   id="features-messaging"
@@ -104,11 +112,10 @@ import { PortfolioSection, GridList } from "~/components"
     care was put into making the messaging section intuitive and familiar on
     mobile devices.
   </p>
-  <div className="desktop-mockup-grid single-column">
-    <img src={messagingMockup} alt="" />
-  </div>
+  <ImageGrid sources={[messagingMockup]}>
+    <ImageGrid.Image src={messagingMockup} alt="" />
+  </ImageGrid>
 </PortfolioSection>
-
 <PortfolioSection
   heading="Blog"
   id="features-blog"
@@ -120,16 +127,12 @@ import { PortfolioSection, GridList } from "~/components"
     searchable using Algolia. The posts are written in markdown and added via a
     custom admin interface.
   </p>
-
-
-
-<div className="desktop-mockup-grid">
-  <img src={desktop1} alt="" />
-  <img src={desktop2} alt="" />
-  <img src={desktop3} alt="" />
-  <img src={desktop4} alt="" />
-</div>
-
+  <ImageGrid sources={[desktop1, desktop2, desktop3, desktop4]}>
+    <ImageGrid.Image src={desktop1} alt="" />
+    <ImageGrid.Image src={desktop2} alt="" />
+    <ImageGrid.Image src={desktop3} alt="" />
+    <ImageGrid.Image src={desktop4} alt="" />
+  </ImageGrid>
 </PortfolioSection>
 
 <PortfolioSection
@@ -142,14 +145,14 @@ import { PortfolioSection, GridList } from "~/components"
     The entire website was created with mobile devices in mind and works on
     screens of any dimensions. A combination of media queries and modern layout
     methods like flexbox and CSS grid were used to achieve this. Additional care
-    was put into making touch input a first-class citizen, with e.g. swipable
+    was put into making touch input a first-class citizen, with e.g. swipeable
     carousels.
   </p>
-  <div className="mobile-mockup-list">
-    <img src={mobile1} alt="" />
-    <img src={mobile2} alt="" />
-    <img src={mobile3} alt="" />
-  </div>
+  <ImageGrid sources={[mobile1, mobile2, mobile3]}>
+    <ImageGrid.Image src={mobile1} alt="" />
+    <ImageGrid.Image src={mobile2} alt="" />
+    <ImageGrid.Image src={mobile3} alt="" />
+  </ImageGrid>
 </PortfolioSection>
 
 <PortfolioSection
@@ -175,5 +178,3 @@ export default ({ children }) => (
     {children}
   </ProjectLayout>
 )
-
->

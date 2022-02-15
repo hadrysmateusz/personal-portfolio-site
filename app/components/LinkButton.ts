@@ -22,7 +22,7 @@ const variant = (props: LinkButtonProps) => {
   }
 }
 
-export const LinkButton = styled(Link)<LinkButtonProps>`
+const linkButtonStyles = (props: LinkButtonProps) => css`
   display: block;
   font-size: var(--font_size__400);
   font-weight: 700;
@@ -35,8 +35,16 @@ export const LinkButton = styled(Link)<LinkButtonProps>`
   &,
   &:visited,
   &:any-link {
-    ${variant};
+    ${variant(props)};
   }
+`
+
+export const LinkButton = styled(Link)<LinkButtonProps>`
+  ${linkButtonStyles}
+`
+
+export const ExternalLinkButton = styled.a<LinkButtonProps>`
+  ${linkButtonStyles}
 `
 
 export const ButtonContainer = styled.div`
@@ -47,3 +55,4 @@ export const ButtonContainer = styled.div`
 `
 
 LinkButton.defaultProps = { variant: "secondary" }
+ExternalLinkButton.defaultProps = { variant: "secondary" }

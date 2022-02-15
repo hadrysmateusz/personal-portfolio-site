@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 import { ProjectMarkdownAttributes } from "~/project"
-import { ButtonContainer, LinkButton } from "~/components/LinkButton"
-import { breakpoints } from "~/components/Breakpoints"
+import { ButtonContainer, ExternalLinkButton } from "~/components/LinkButton"
+import { ImageGrid } from "~/components/ImageGrid"
 
 export const ProjectLayout = ({
   children,
@@ -14,7 +14,6 @@ export const ProjectLayout = ({
   attributes: ProjectMarkdownAttributes
   mainImage: string
 }) => {
-  console.log("ProjectLayout attributes", attributes)
   return (
     <ProjectLayoutWrapper>
       <div className="meta-container">
@@ -29,18 +28,21 @@ export const ProjectLayout = ({
         </ul>
         <p className="short-description">{attributes.shortDescription}</p>
         <ButtonContainer>
-          {/* TODO: Use a button that's a regular a tag and not internal link */}
           {attributes.liveLink ? (
-            <LinkButton to={attributes.liveLink} variant="primary">
+            <ExternalLinkButton href={attributes.liveLink} variant="primary">
               Go to website
-            </LinkButton>
+            </ExternalLinkButton>
           ) : null}
           {attributes.codeLink ? (
-            <LinkButton to={attributes.codeLink}>View Code</LinkButton>
+            <ExternalLinkButton href={attributes.codeLink}>
+              View Code
+            </ExternalLinkButton>
           ) : null}
         </ButtonContainer>
       </div>
-      <img src={mainImage} alt="project preview" />
+      <ImageGrid sources={[mainImage]}>
+        <ImageGrid.Image src={mainImage} alt="project preview" />
+      </ImageGrid>
       <main>{children}</main>
     </ProjectLayoutWrapper>
   )
@@ -77,24 +79,6 @@ const ProjectLayoutWrapper = styled.div`
 
   .short-description {
     color: var(--color__text_500);
-  }
-
-  .mobile-mockup-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing__500);
-    margin-top: var(--spacing__800);
-  }
-
-  .desktop-mockup-grid {
-    display: grid;
-    gap: var(--spacing__300);
-    padding-top: var(--spacing__700);
-
-    &:not(&.single-column) {
-      ${breakpoints.from.xs`grid-template-columns: repeat(2, 1fr);`}
-      ${breakpoints.from.xl`margin: 0 -160px;`}
-    }
   }
 `
 
