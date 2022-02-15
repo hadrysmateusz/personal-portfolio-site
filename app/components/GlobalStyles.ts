@@ -1,21 +1,82 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle, keyframes } from "styled-components"
+import { breakpoints } from "~/components/Breakpoints"
+import { ValueWithUnit } from "~/components/ValueWithUnit"
 
-export const PAGE_HEADER_HEIGHT = {
-  value: 66,
-  unit: "px",
-  toString() {
-    return `${this.value}${this.unit}`
-  },
-} as const
+export const PAGE_HEADER_HEIGHT = new ValueWithUnit(66, "px")
+export const PAGE_CONTAINER_MAX_WIDTH = new ValueWithUnit(1100, "px")
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --font_size__400: 20px;    
-    --font_size__500: 23px; // base
-    --font_size__600: 30px;
-    --font_size__700: 42px;
-    --font_size__900: 92px;
+      --font_size__400: 11px;
+      --font_size__500: 14px; // base
+      --font_size__600: 19px;
+      --font_size__700: 24px;
+      --font_size__800: 31px;
+      --font_size__900: 38px;
+    ${breakpoints.from.sm`
+        --font_size__400: 13px;    
+        --font_size__500: 16px; // base
+        --font_size__600: 22px;
+        --font_size__700: 28px;
+        --font_size__800: 36px;
+        --font_size__900: 56px;
+      `}
+      ${breakpoints.from.md`
+        --font_size__400: 15px;    
+        --font_size__500: 18px; // base
+        --font_size__600: 24px;
+        --font_size__700: 32px;
+        --font_size__800: 46px;
+        --font_size__900: 64px;
+      `}
+      ${breakpoints.from.lg`
+        --font_size__400: 16px;    
+        --font_size__500: 19px; // base
+        --font_size__600: 25px;
+        --font_size__700: 36px;
+        --font_size__800: 50px;
+        --font_size__900: 71px;
+      `}
+      ${breakpoints.from.xl`
+        --font_size__400: 20px;    
+        --font_size__500: 23px; // base
+        --font_size__600: 30px;
+        --font_size__700: 42px;
+        --font_size__800: 61px;
+        --font_size__900: 92px;
+      `}
+        
+    --spacing__200: 7px;
+    --spacing__300: 10px;
+    --spacing__400: 15px; 
+    --spacing__500: 20px;
+    --spacing__600: 30px;
+    --spacing__700: 44px;
+    --spacing__800: 60px;
+    --spacing__900: 80px;
+    ${breakpoints.from.md`
+    --spacing__200: 9px;
+    --spacing__300: 12px;
+    --spacing__400: 18px; 
+    --spacing__500: 24px;
+    --spacing__600: 32px;
+    --spacing__700: 48px;
+    --spacing__800: 72px;
+    --spacing__900: 96px;
+      `}
 
+    ${breakpoints.from.xl`
+    --spacing__200: 12px;
+    --spacing__300: 16px;
+    --spacing__400: 24px; 
+    --spacing__500: 32px;
+    --spacing__600: 48px;
+    --spacing__700: 60px;
+    --spacing__800: 90px;
+    --spacing__900: 120px;
+      `}
+    
+    
     --color__background: #0E0D13;
     --color__accent: #ED355A;
     --color__text_300: #484952;
@@ -25,6 +86,7 @@ const GlobalStyles = createGlobalStyle`
     --color__text_900: #FFFFFF;
 
     --page_header_height: ${PAGE_HEADER_HEIGHT.toString()};
+    --page_container_max_width: ${PAGE_CONTAINER_MAX_WIDTH.toString()}; 
   }
 
   *,

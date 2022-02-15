@@ -9,6 +9,8 @@ import {
 } from "remix"
 import normalize from "~/normalize.css"
 import GlobalStyles from "~/components/GlobalStyles"
+import { ThemeProvider } from "~/components/ThemeProvider"
+import { ScrollPositionProvider } from "~/components/ScrollPositionProvider/ScrollPositionProvider"
 
 export const meta: MetaFunction = () => {
   return { title: "Mateusz Hadryś - Portfolio" }
@@ -20,7 +22,6 @@ export const links: LinksFunction = () => {
       rel: "stylesheet",
       href: normalize,
     },
-
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
     {
       rel: "preconnect",
@@ -36,21 +37,25 @@ export const links: LinksFunction = () => {
 
 export default function App() {
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <Meta />
-        <Links />
-        <GlobalStyles />
-        {typeof document === "undefined" ? "__STYLES__" : null}
-      </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
-      </body>
-    </html>
+    <ThemeProvider>
+      <html lang="en">
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <Meta />
+          <Links />
+          <GlobalStyles />
+          {typeof document === "undefined" ? "__STYLES__" : null}
+        </head>
+        <body>
+          <ScrollPositionProvider>
+            <Outlet />
+          </ScrollPositionProvider>
+          <ScrollRestoration />
+          <Scripts />
+          {process.env.NODE_ENV === "development" && <LiveReload />}
+        </body>
+      </html>
+    </ThemeProvider>
   )
 }
