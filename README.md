@@ -1,34 +1,24 @@
-# Welcome to Remix!
+# Personal Portfolio
 
-- [Remix Docs](https://remix.run/docs)
+![Project screenshot](./screenshot.png)
 
-## Deployment
+## 📑 Table of contents
+* [General info](#ℹ-general-info)
+* [Technologies](#-technologies)
+* [View project](#-view-project)
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+## ℹ General info
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+Personal portfolio website built with Remix & TypeScript. Contains info and case studies on some of my projects.
 
-```sh
-npm i -g vercel
-vercel
-```
+## 🛠 Technologies
 
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+Some of the technologies used in this project:
+- [Remix](https://remix.run)
+- [React](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [styled-components](https://styled-components.com)
 
-## Development
+## 👀 View project
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
-
-```sh
-npm install
-```
-
-Afterwards, start the Remix development server like so:
-
-```sh
-npm run dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
-
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+You can see the [website live here](https://hadrysmateusz.com).
