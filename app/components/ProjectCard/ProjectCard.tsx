@@ -1,6 +1,7 @@
 import React from "react"
 import { ProjectCardWrapper } from "./ProjectCard.styles"
 import { ButtonContainer, LinkButton } from "~/components/LinkButton"
+import { Link } from "@remix-run/react"
 
 interface ProjectCardProps {
   name: string
@@ -33,7 +34,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </LinkButton>
         </ButtonContainer>
       </div>
-      <img className="project-image" src={imgSrc} alt="" />
+      <Link to={`/project/${slug}`}>
+        <img className="project-image" src={imgSrc} alt="" />
+      </Link>
     </ProjectCardWrapper>
   )
 }

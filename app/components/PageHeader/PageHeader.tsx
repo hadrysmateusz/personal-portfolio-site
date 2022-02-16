@@ -2,6 +2,7 @@ import React from "react"
 import { FaGithub, FaMediumM, FaTwitter } from "react-icons/fa"
 import { PageHeaderWrapper } from "./PageHeader.styles"
 import { useScrollPosition } from "~/components/ScrollPositionProvider/ScrollPositionProvider"
+import { Link } from "@remix-run/react"
 
 interface PageHeaderProps {}
 
@@ -12,7 +13,7 @@ export const PageHeader: React.FC<PageHeaderProps> = () => {
     <PageHeaderWrapper>
       <ul className="nav-group">
         <li>
-          <a href="/">Portfolio</a>
+          <Link to="/">Portfolio</Link>
         </li>
         <li>
           <a href="https://hadrysmateusz.medium.com">Blog</a>
@@ -23,7 +24,9 @@ export const PageHeader: React.FC<PageHeaderProps> = () => {
       </ul>
       <div className="name-container">
         {typeof scrollPosition === "number" && scrollPosition >= 390 ? (
-          <div className="name-inner">Mateusz Hadryś</div>
+          <Link to="/">
+            <div className="name-inner">Mateusz Hadryś</div>
+          </Link>
         ) : null}
       </div>
       <ul className="nav-group">
