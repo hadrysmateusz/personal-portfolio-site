@@ -13,13 +13,12 @@ const layoutStyles = (props: IWithLayoutType) => {
           grid-template-columns: repeat(2, 1fr);
           // gap: var(--spacing__300);
         `}
-        ${breakpoints.from.xl`margin: 0 -160px;`}
+        ${breakpoints.from.xl`margin-left: -160px; margin-right: -160px;`}
       `
     case "three-column":
       return css`
         grid-template-columns: repeat(3, 1fr);
         gap: var(--spacing__500);
-        //margin-top: var(--spacing__800);
       `
   }
 }
@@ -30,7 +29,7 @@ export const ImageGridWrapper = styled.div<{
   display: grid;
   gap: var(--spacing__400);
   margin-top: var(--spacing__700);
-  
+
   img {
     cursor: zoom-in;
   }
