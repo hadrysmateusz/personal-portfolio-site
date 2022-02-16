@@ -8,7 +8,7 @@ export const FooterWrapper = styled.footer`
   padding: 0 var(--spacing__500);
 
   white-space: nowrap;
-  background: #19181f;
+  background: var(--color__text_100);
   font-size: var(--font_size__400);
 
   display: grid;
@@ -49,7 +49,7 @@ export const FooterWrapper = styled.footer`
       color: var(--color__text_700);
       :hover,
       :active {
-        color: var(--color__text_900);
+        color: var(--color__white);
       }
     }
   }

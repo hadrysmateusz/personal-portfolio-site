@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { breakpoints } from "~/components/Breakpoints"
 
 export const ProjectCardWrapper = styled.li`
-  color: #83858e;
+  color: var(--color__text_500);
   overflow: hidden;
   font-size: var(--font_size__400);
   
@@ -12,7 +12,7 @@ export const ProjectCardWrapper = styled.li`
   }
 
   h3.project-name {
-    color: #ffffff;
+    color: var(--color__white);
     font-size: var(--font_size__600);
     font-weight: bold;
 
@@ -27,7 +27,7 @@ export const ProjectCardWrapper = styled.li`
 
     li {
       display: inline-block;
-      color: #9a9ca5;
+      color: var(--color__text_600);
       font-size: var(--font_size__400);
       font-weight: bold;
       text-transform: uppercase;
@@ -75,7 +75,7 @@ export const ProjectCardWrapper = styled.li`
     grid-auto-flow: column;
     grid-template-columns: repeat(2, 1fr);
 
-    background: #16171b;
+    background: var(--color__background_lighter);
     border-radius: 14px;
 
     img.project-image {

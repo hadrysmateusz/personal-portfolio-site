@@ -10,7 +10,7 @@ const variant = (props: LinkButtonProps) => {
     case "primary":
       return css`
         background: var(--color__accent);
-        color: var(--color__text_900);
+        color: var(--color__white);
         border: 2.5px solid var(--color__accent);
       `
     case "secondary":

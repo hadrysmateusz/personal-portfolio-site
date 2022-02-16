@@ -17,7 +17,7 @@ export const PageHeaderWrapper = styled.nav`
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3);
 
   background: var(--color__background);
-  color: #ffffff;
+  color: var(--color__white);
   font-size: var(--font_size__400);
   font-weight: 600;
   text-transform: uppercase;

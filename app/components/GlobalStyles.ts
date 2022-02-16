@@ -45,9 +45,10 @@ const GlobalStyles = createGlobalStyle`
         --font_size__800: 61px;
         --font_size__900: 92px;
       `}
-        
-    --spacing__200: 7px;
-    --spacing__300: 10px;
+
+    --spacing__100: 5px;
+    --spacing__200: 8px;
+    --spacing__300: 11px;
     --spacing__400: 15px; 
     --spacing__500: 20px;
     --spacing__600: 30px;
@@ -55,6 +56,7 @@ const GlobalStyles = createGlobalStyle`
     --spacing__800: 60px;
     --spacing__900: 80px;
     ${breakpoints.from.md`
+    --spacing__100: 6px;
     --spacing__200: 9px;
     --spacing__300: 12px;
     --spacing__400: 18px; 
@@ -66,6 +68,7 @@ const GlobalStyles = createGlobalStyle`
       `}
 
     ${breakpoints.from.xl`
+    --spacing__100: 8px;
     --spacing__200: 12px;
     --spacing__300: 16px;
     --spacing__400: 24px; 
@@ -77,13 +80,28 @@ const GlobalStyles = createGlobalStyle`
       `}
     
     
-    --color__background: #0E0D13;
+    // TODO: switch to using new color scale and more accurate aliases
+    --color__grayscale_100: #0E0D13;
+    --color__grayscale_200: #16171B;
+    --color__grayscale_300: #19181F;
+    --color__grayscale_400: #484952;
+    --color__grayscale_500: #83858E;
+    --color__grayscale_600: #9A9CA5;
+    --color__grayscale_700: #C2C4CD;
+    --color__grayscale_800: red; // TODO: set
+    --color__grayscale_900: red; // TODO: set
+    
+    --color__white: #ffffff;
     --color__accent: #ED355A;
-    --color__text_300: #484952;
-    --color__text_500: #83858E;
-    --color__text_600: #9A9CA5;
-    --color__text_700: #C2C4CD;
-    --color__text_900: #FFFFFF;
+    
+    --color__background: var(--color__grayscale_100);
+    --color__background_lighter: var(--color__grayscale_200);
+    
+    --color__text_100: var(--color__grayscale_300);
+    --color__text_300: var(--color__grayscale_400);
+    --color__text_500: var(--color__grayscale_500);
+    --color__text_600: var(--color__grayscale_600);
+    --color__text_700: var(--color__grayscale_700);
 
     --page_header_height: ${PAGE_HEADER_HEIGHT.toString()};
     --page_container_max_width: ${PAGE_CONTAINER_MAX_WIDTH.toString()}; 
@@ -101,7 +119,7 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.6;
     
     background: var(--color__background);
-    color: #ffffff;
+    color: var(--color__white);
   }
   
   // Reset list styles

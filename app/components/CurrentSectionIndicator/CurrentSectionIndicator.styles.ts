@@ -16,7 +16,7 @@ export const CurrentSectionIndicatorWrapper = styled.div`
 
   pointer-events: none;
 
-  color: #19181f;
+  color: var(--color__text_100);
 
   font-size: 120px;
   font-weight: 700;
@@ -24,8 +24,6 @@ export const CurrentSectionIndicatorWrapper = styled.div`
   writing-mode: vertical-lr;
 
   animation: ease 0.9s both ${keyframeAnimations.reveal};
-
-  //background:red;
 
   --page_horizontal_margin: calc(100vw - var(--page_container_max_width));
 

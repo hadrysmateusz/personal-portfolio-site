@@ -21,7 +21,7 @@ export const HeroWrapper = styled.div`
   h1.name {
     font-size: var(--font_size__900);
     font-weight: 800;
-    color: #ffffff;
+    color: var(--color__white);
     letter-spacing: 0.3px;
     text-transform: uppercase;
 
