@@ -30,17 +30,17 @@ export const PageHeader: React.FC<PageHeaderProps> = () => {
         ) : null}
       </div>
       <ul className="nav-group">
-        <li>
+        <li className="icon-nav-item">
           <a href="https://github.com/hadrysmateusz">
             <FaGithub />
           </a>
         </li>
-        <li>
+        <li className="icon-nav-item">
           <a href="https://hadrysmateusz.medium.com">
             <FaMediumM />
           </a>
         </li>
-        <li>
+        <li className="icon-nav-item">
           <a href="https://twitter.com/HadrysMateusz">
             <FaTwitter />
           </a>

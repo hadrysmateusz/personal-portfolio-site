@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { ProjectMarkdownAttributes } from "~/project"
 import { ButtonContainer, ExternalLinkButton } from "~/components/LinkButton"
 import { ImageGrid } from "~/components/ImageGrid"
+import { breakpoints } from "~/components/Breakpoints"
 
 export const ProjectLayout = ({
   children,
@@ -64,6 +65,10 @@ const ProjectLayoutWrapper = styled.div`
   }
 
   .info-list {
+    margin-top: var(--spacing__100);
+    font-size: var(--font_size__400);
+    ${breakpoints.from.xs`font-size: var(--font_size__500);`}
+    
     li {
       display: inline-block;
       color: var(--color__text_700);

@@ -22,6 +22,10 @@ export const PageHeaderWrapper = styled.nav`
   font-weight: 600;
   text-transform: uppercase;
 
+  > * {
+    margin-top: 1px; // offset the border-top
+  }
+
   ul.nav-group {
     display: flex;
     flex-flow: row nowrap;
@@ -34,6 +38,18 @@ export const PageHeaderWrapper = styled.nav`
       align-items: center;
 
       cursor: pointer;
+
+      :hover {
+        color: var(--color__accent);
+      }
+
+      &.icon-nav-item {
+        margin-top: 4px;
+        padding: 10px 1px;
+
+        transform: scale(1.3);
+        ${breakpoints.from.md`transform: scale(1);`}
+      }
     }
   }
 
