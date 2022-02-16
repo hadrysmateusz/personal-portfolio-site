@@ -3,6 +3,7 @@ import { ProjectsViewWrapper } from "./ProjectsView.styles"
 import { ProjectCard } from "~/components"
 import { usePositionManagerDispatch } from "~/components/PositionManager"
 import { useInView } from "react-intersection-observer"
+
 import writingApp1 from "~/assets/writing-app/writing-app-card.png"
 import streetzone1 from "~/assets/streetzone/streetzone-card.png"
 
@@ -28,7 +29,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = () => {
     <ProjectsViewWrapper ref={ref}>
       <p>
         I love tinkering with web technologies and creating useful things with
-        them. Over my 5 year journey with web development, I've created many
+        them. Over my 5 year journey with web development, I've created several
         full-stack projects, some of which are listed below:
       </p>
       <ul className="projects-list">
@@ -53,6 +54,10 @@ export const ProjectsView: React.FC<ProjectsViewProps> = () => {
         {/*  imgSrc="https://picsum.photos/550/380"*/}
         {/*/>*/}
       </ul>
+      <p>
+        Smaller projects like this portfolio site can be found on my{" "}
+        <a href={"https://github.com/hadrysmateusz"}>GitHub</a>.
+      </p>
     </ProjectsViewWrapper>
   )
 }

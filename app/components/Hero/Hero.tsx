@@ -13,7 +13,7 @@ export const Hero: React.FC<HeroProps> = () => {
         <div className="subheading">Frontend Web Developer</div>
         <p className="short-about">
           I'm a passionate <strong>web developer</strong> from Poland. I
-          specialise in creating web applications with <strong>React.js</strong>
+          specialise in creating web applications with <strong>React</strong> & <strong>TypeScript</strong>
         </p>
         <ButtonContainer>
           <LinkButton to="#projects" variant="primary">

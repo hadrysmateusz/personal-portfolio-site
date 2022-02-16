@@ -7,5 +7,12 @@ export const ProjectsViewWrapper = styled.div`
     margin: var(--spacing__600) 0;
     
     list-style: none;
+    
+    
+  }
+  
+  p a {
+    color: var(--color__white);
+    text-decoration: underline;
   }
 `

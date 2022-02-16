@@ -33,12 +33,12 @@ export const SkillsView: React.FC<SkillsViewProps> = () => {
       <GridList>
         <li>TypeScript</li>
         <li>Gatsby & Remix</li>
+        <li>Git & GitHub</li>
+        <li>Responsive Design</li>
+        <li>REST & GraphQL</li>
         <li>Electron</li>
         <li>Firebase</li>
         <li>AWS</li>
-        <li>Git & GitHub</li>
-        <li>Responsive Web Design</li>
-        <li>REST & GraphQL</li>
         <li>CouchDB</li>
       </GridList>
       <p>

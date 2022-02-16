@@ -45,7 +45,7 @@ export const AboutView: React.FC<SkillsViewProps> = () => {
       <p>
         Since then I've been learning everything I could about different web
         development technologies, and eventually found <b>React</b>. It felt so
-        much more natural than PHP. I was hooked.
+        much more natural than PHP to me. I was hooked.
       </p>
     </AboutViewWrapper>
   )
