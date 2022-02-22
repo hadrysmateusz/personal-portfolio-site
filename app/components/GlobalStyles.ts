@@ -14,70 +14,69 @@ const GlobalStyles = createGlobalStyle`
       --font_size__800: 31px;
       --font_size__900: 38px;
     ${breakpoints.from.sm`
-        --font_size__400: 13px;    
-        --font_size__500: 16px; // base
-        --font_size__600: 22px;
-        --font_size__700: 28px;
-        --font_size__800: 36px;
-        --font_size__900: 56px;
-      `}
-      ${breakpoints.from.md`
-        --font_size__400: 15px;    
-        --font_size__500: 18px; // base
-        --font_size__600: 24px;
-        --font_size__700: 32px;
-        --font_size__800: 46px;
-        --font_size__900: 64px;
-      `}
-      ${breakpoints.from.lg`
-        --font_size__400: 16px;    
-        --font_size__500: 19px; // base
-        --font_size__600: 25px;
-        --font_size__700: 36px;
-        --font_size__800: 50px;
-        --font_size__900: 71px;
-      `}
-      ${breakpoints.from.xl`
-        --font_size__400: 20px;    
-        --font_size__500: 23px; // base
-        --font_size__600: 30px;
-        --font_size__700: 42px;
-        --font_size__800: 61px;
-        --font_size__900: 92px;
-      `}
-
-    --spacing__100: 5px;
-    --spacing__200: 8px;
-    --spacing__300: 11px;
-    --spacing__400: 15px; 
-    --spacing__500: 20px;
-    --spacing__600: 30px;
-    --spacing__700: 44px;
-    --spacing__800: 60px;
-    --spacing__900: 80px;
+      --font_size__400: 13px;    
+      --font_size__500: 16px; // base
+      --font_size__600: 22px;
+      --font_size__700: 28px;
+      --font_size__800: 36px;
+      --font_size__900: 56px;
+    `}
     ${breakpoints.from.md`
-    --spacing__100: 6px;
-    --spacing__200: 9px;
-    --spacing__300: 12px;
-    --spacing__400: 18px; 
-    --spacing__500: 24px;
-    --spacing__600: 32px;
-    --spacing__700: 48px;
-    --spacing__800: 72px;
-    --spacing__900: 96px;
-      `}
-
+      --font_size__400: 15px;    
+      --font_size__500: 18px; // base
+      --font_size__600: 24px;
+      --font_size__700: 32px;
+      --font_size__800: 46px;
+      --font_size__900: 64px;
+    `}
+    ${breakpoints.from.lg`
+      --font_size__400: 16px;    
+      --font_size__500: 19px; // base
+      --font_size__600: 25px;
+      --font_size__700: 36px;
+      --font_size__800: 50px;
+      --font_size__900: 71px;
+    `}
     ${breakpoints.from.xl`
-    --spacing__100: 8px;
-    --spacing__200: 12px;
-    --spacing__300: 16px;
-    --spacing__400: 24px; 
-    --spacing__500: 32px;
-    --spacing__600: 48px;
-    --spacing__700: 60px;
-    --spacing__800: 90px;
-    --spacing__900: 120px;
-      `}
+      --font_size__400: 20px;    
+      --font_size__500: 23px; // base
+      --font_size__600: 30px;
+      --font_size__700: 42px;
+      --font_size__800: 61px;
+      --font_size__900: 92px;
+    `}
+
+      --spacing__100: 5px;
+      --spacing__200: 8px;
+      --spacing__300: 11px;
+      --spacing__400: 15px; 
+      --spacing__500: 20px;
+      --spacing__600: 30px;
+      --spacing__700: 44px;
+      --spacing__800: 60px;
+      --spacing__900: 80px;
+    ${breakpoints.from.md`
+      --spacing__100: 6px;
+      --spacing__200: 9px;
+      --spacing__300: 12px;
+      --spacing__400: 18px; 
+      --spacing__500: 24px;
+      --spacing__600: 32px;
+      --spacing__700: 48px;
+      --spacing__800: 72px;
+      --spacing__900: 96px;
+    `}
+    ${breakpoints.from.xl`
+      --spacing__100: 8px;
+      --spacing__200: 12px;
+      --spacing__300: 16px;
+      --spacing__400: 24px; 
+      --spacing__500: 32px;
+      --spacing__600: 48px;
+      --spacing__700: 60px;
+      --spacing__800: 90px;
+      --spacing__900: 120px;
+    `}
     
     
     // TODO: switch to using new color scale and more accurate aliases
