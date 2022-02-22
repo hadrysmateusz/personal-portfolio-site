@@ -22,7 +22,7 @@ export type PostMarkdownAttributes = {
 }
 
 // path relative to server output
-const postsPath = path.join("./posts")
+const postsPath = path.join(__dirname, "../", "posts")
 console.log("__dirname",__dirname)
 console.log("postsPath",postsPath)
 
