@@ -5,6 +5,14 @@ import invariant from "tiny-invariant"
 import { marked } from "marked"
 import hljs from "highlight.js"
 
+// TODO: this is an attempt to temporarily force these files to be included in build, but a permanent solution is required, probably by using mdx routes like for projects
+import "../../posts/background-properties-explained.md"
+import "../../posts/css-gradients-guide.md"
+import "../../posts/css-list-styling.md"
+import "../../posts/font-shorthand.md"
+import "../../posts/js-get-all-characters-in-string.md"
+import "../../posts/gradient-text.md"
+
 export type Post = {
   slug: string
   title: string
@@ -22,7 +30,7 @@ export type PostMarkdownAttributes = {
 }
 
 // path relative to server output
-const postsPath = path.join(__dirname, "", "posts")
+const postsPath = path.join(__dirname, "../..", "posts")
 console.log("__dirname",__dirname)
 console.log("postsPath",postsPath)
 
