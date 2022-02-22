@@ -14,6 +14,8 @@ interface PostCardProps {
   slug: string
 }
 
+// TODO: currently the internal blog is disabled due to production build issues, probably should be fixed by migrating to mdx pages or cms
+
 export const loader = () => {
   return getPosts()
 }
