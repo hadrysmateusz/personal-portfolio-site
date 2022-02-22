@@ -37,12 +37,35 @@ function isValidPostAttributes(
 export async function getPosts() {
   console.log("__dirname",__dirname)
   console.log("postsPath",postsPath)
-  const dir = await fs.readdir(postsPath)
-  console.log("dir",dir)
 
-  return {
-    ".":dir 
+  const res: Record<string,any> = {}
+
+  try {
+    res["__dirname"] = await fs.readdir(__dirname)
+  } catch {
+    res["__dirname"] = "error"
   }
+
+  try {
+    res["__dirname/posts"] = await fs.readdir(path.join(__dirname, "./", "posts"))
+  } catch {
+    res["__dirname/posts"] = "error"
+  }
+
+  try {
+    res["__dirname/../"] = await fs.readdir(path.join(__dirname, "../"))
+  } catch {
+    res["__dirname/../"] = "error"
+  }
+
+  try {
+    res["__dirname/../../"] = await fs.readdir(path.join(__dirname, "../../"))
+  } catch {
+    res["__dirname/../../"] = "error"
+  }
+
+
+  return res
 
   // return Promise.all(
   //   dir.map(async (filename) => {
