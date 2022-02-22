@@ -42,7 +42,9 @@ export async function getPosts() {
 
   return Promise.all(
     dir.map(async (filename) => {
-      const file = await fs.readFile(path.join(postsPath, filename))
+      const filepath = path.join(postsPath, filename)
+      console.log("filepath",filepath)
+      const file = await fs.readFile(filepath)
       console.log("file",file)
       const { attributes } = parseFrontMatter(file.toString())
       invariant(
