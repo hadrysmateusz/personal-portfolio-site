@@ -22,7 +22,9 @@ export type PostMarkdownAttributes = {
 }
 
 // path relative to server output
-const postsPath = path.join(__dirname, "../..", "posts")
+const postsPath = path.join(__dirname, "", "posts")
+console.log("__dirname",__dirname)
+console.log("postsPath",postsPath)
 
 function isValidPostAttributes(
   attributes: any,
@@ -33,11 +35,15 @@ function isValidPostAttributes(
 }
 
 export async function getPosts() {
+  console.log("__dirname",__dirname)
+  console.log("postsPath",postsPath)
   const dir = await fs.readdir(postsPath)
+  console.log("dir",dir)
 
   return Promise.all(
     dir.map(async (filename) => {
       const file = await fs.readFile(path.join(postsPath, filename))
+      console.log("file",file)
       const { attributes } = parseFrontMatter(file.toString())
       invariant(
         isValidPostAttributes(attributes),
@@ -45,7 +51,7 @@ export async function getPosts() {
       )
       return {
         slug: filename.replace(/\.md$/, ""),
-        ...attributes
+        ...attributes,
       }
     }),
   )
@@ -53,6 +59,9 @@ export async function getPosts() {
 
 export async function getPost(slug: string) {
   const filepath = path.join(postsPath, slug + ".md")
+  console.log("__dirname",__dirname)
+  console.log("postsPath",postsPath)
+  console.log("filepath",filepath)
   const file = await fs.readFile(filepath)
   const { attributes, body } = parseFrontMatter(file.toString())
   invariant(
@@ -60,15 +69,14 @@ export async function getPost(slug: string) {
     `Post ${filepath} is missing attributes`,
   )
   marked.setOptions({
-    highlight: function(code) {
+    highlight: function (code) {
       return hljs.highlightAuto(code).value
-    }
+    },
   })
   const html = marked(body)
-  console.log(body, html)
   return {
     slug,
     html,
-    ...attributes
+    ...attributes,
   }
 }
