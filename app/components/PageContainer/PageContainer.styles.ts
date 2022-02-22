@@ -11,6 +11,7 @@ export const PageContainerWrapper = styled.div`
 
   .inner-container {
     padding: var(--spacing__400);
+    width: 100%;
 
     ${breakpoints.from.xs`max-width: 600px;`}
     ${breakpoints.from.sm`max-width: 720px;`}

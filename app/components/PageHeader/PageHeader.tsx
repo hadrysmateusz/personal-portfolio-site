@@ -16,7 +16,7 @@ export const PageHeader: React.FC<PageHeaderProps> = () => {
           <Link to="/">Portfolio</Link>
         </li>
         <li>
-          <a href="https://hadrysmateusz.medium.com">Blog</a>
+          <Link to="/blog">Blog</Link>
         </li>
         <li>
           <a href="mailto:hadrys.mateusz86@gmail.com">Contact</a>

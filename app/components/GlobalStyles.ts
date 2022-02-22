@@ -78,7 +78,6 @@ const GlobalStyles = createGlobalStyle`
       --spacing__900: 120px;
     `}
     
-    
     // TODO: switch to using new color scale and more accurate aliases
     --color__grayscale_100: #0E0D13;
     --color__grayscale_200: #16171B;
@@ -88,7 +87,7 @@ const GlobalStyles = createGlobalStyle`
     --color__grayscale_600: #9A9CA5;
     --color__grayscale_700: #C2C4CD;
     --color__grayscale_800: red; // TODO: set
-    --color__grayscale_900: red; // TODO: set
+    --color__grayscale_900: #F6F6F6;
     
     --color__white: #ffffff;
     --color__accent: #ED355A;
