@@ -21,15 +21,16 @@ export const loader = () => {
 }
 
 export default function Posts() {
-  const posts = useLoaderData<Post[]>()
+  const posts = useLoaderData<any>()
+  console.log("loader: ", posts)
 
   return (
     <PostsIndexWrapper>
       {/*<h1>Posts</h1>*/}
       <ul>
-        {posts.map(({ html, ...post }) => (
-          <PostCard key={post.slug} {...post} />
-        ))}
+        {/*{posts.map(({ html, ...post }) => (*/}
+        {/*  <PostCard key={post.slug} {...post} />*/}
+        {/*))}*/}
       </ul>
     </PostsIndexWrapper>
   )

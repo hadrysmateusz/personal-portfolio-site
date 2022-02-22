@@ -40,23 +40,27 @@ export async function getPosts() {
   const dir = await fs.readdir(postsPath)
   console.log("dir",dir)
 
-  return Promise.all(
-    dir.map(async (filename) => {
-      const filepath = path.join(postsPath, filename)
-      console.log("filepath",filepath)
-      const file = await fs.readFile(filepath)
-      console.log("file",file)
-      const { attributes } = parseFrontMatter(file.toString())
-      invariant(
-        isValidPostAttributes(attributes),
-        `${filename} has bad meta data`,
-      )
-      return {
-        slug: filename.replace(/\.md$/, ""),
-        ...attributes,
-      }
-    }),
-  )
+  return {
+    ".":dir 
+  }
+
+  // return Promise.all(
+  //   dir.map(async (filename) => {
+  //     const filepath = path.join(postsPath, filename)
+  //     console.log("filepath",filepath)
+  //     const file = await fs.readFile(filepath)
+  //     console.log("file",file)
+  //     const { attributes } = parseFrontMatter(file.toString())
+  //     invariant(
+  //       isValidPostAttributes(attributes),
+  //       `${filename} has bad meta data`,
+  //     )
+  //     return {
+  //       slug: filename.replace(/\.md$/, ""),
+  //       ...attributes,
+  //     }
+  //   }),
+  // )
 }
 
 export async function getPost(slug: string) {
