@@ -41,8 +41,6 @@ export const ScrollPositionProvider: React.FC = ({ children }) => {
     return () => window?.removeEventListener("scroll", throttledUpdateScroll)
   }, [throttledUpdateScroll, updateScroll])
 
-  console.log(value)
-
   return (
     <ScrollPositionContext.Provider value={value}>
       {children}
