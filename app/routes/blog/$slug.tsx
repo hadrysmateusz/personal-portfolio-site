@@ -7,6 +7,8 @@ import styled from "styled-components"
 import { breakpoints } from "~/components/Breakpoints"
 import { ImageGrid } from "~/components"
 
+// TODO: currently the internal blog is disabled due to production build issues, probably should be fixed by migrating to mdx pages or cms
+
 export const loader: LoaderFunction = async ({ params }) => {
   console.log("slug loader")
   invariant(params.slug, "expected params.slug")
@@ -40,7 +42,7 @@ const PostWrapper = styled.article`
   color: var(--color__grayscale_900);
   
   iframe {
-    position: relative !important;
+    position: relative !important; // TODO: make this work without !important
   }
 
   .meta-container {
