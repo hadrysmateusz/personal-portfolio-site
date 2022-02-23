@@ -53,7 +53,7 @@ export default function App() {
           </ScrollPositionProvider>
           <ScrollRestoration />
           <Scripts />
-          {process.env.NODE_ENV === "development" && <LiveReload />}
+          <LiveReload />
         </body>
       </html>
     </ThemeProvider>
