@@ -71,9 +71,9 @@ export async function getPosts() {
   }
 
   try {
-    res["__dirname/../build"] = await fs.readdir(path.join(__dirname, "../build"))
+    res["__dirname/../_build"] = await fs.readdir(path.join(__dirname, "../_build"))
   } catch {
-    res["__dirname/../build"] = "error"
+    res["__dirname/../_build"] = "error"
   }
 
   try {
