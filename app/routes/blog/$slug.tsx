@@ -18,7 +18,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 export default function PostSlug() {
   const post = useLoaderData<Post>()
 
-  console.log("post", post)
+  console.log("post loader data", post)
 
   return (
     <PostWrapper>
