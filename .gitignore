@@ -5,6 +5,10 @@ node_modules
 .output
 
 /build/
+/.cache
+/server/build
 /public/build
 /api/index.js
 .env
+
+
