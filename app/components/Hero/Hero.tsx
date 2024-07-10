@@ -10,10 +10,11 @@ export const Hero: React.FC<HeroProps> = () => {
     <HeroWrapper>
       <div className="hero-content-wrapper">
         <h1 className="name">Mateusz Hadryś</h1>
-        <div className="subheading">Frontend Web Developer</div>
+        <div className="subheading">Full-stack Web Developer</div>
         <p className="short-about">
           I'm a passionate <strong>web developer</strong> from Poland. I
-          specialise in creating web applications with <strong>React</strong> & <strong>TypeScript</strong>
+          specialise in creating web applications with <strong>React</strong> &{" "}
+          <strong>TypeScript</strong>
         </p>
         <ButtonContainer>
           <LinkButton to="#projects" variant="primary">
@@ -23,7 +24,7 @@ export const Hero: React.FC<HeroProps> = () => {
             About Me
           </LinkButton>
         </ButtonContainer>
-        <ScrollIndicator linkTo="#about"/>
+        <ScrollIndicator linkTo="#about" />
       </div>
     </HeroWrapper>
   )

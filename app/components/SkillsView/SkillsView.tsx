@@ -31,15 +31,15 @@ export const SkillsView: React.FC<SkillsViewProps> = () => {
         <em>TypeScript</em> and <em>Styled-Components</em>.
       </p>
       <GridList>
+        <li>React</li>
         <li>TypeScript</li>
-        <li>Gatsby & Remix</li>
+        <li>Next.js & Remix</li>
         <li>Git & GitHub</li>
         <li>Responsive Design</li>
         <li>REST & GraphQL</li>
-        <li>Electron</li>
         <li>Firebase</li>
         <li>AWS</li>
-        <li>CouchDB</li>
+        <li>Databases</li>
       </GridList>
       <p>
         While I specialise in front-end development, I also have experience with

@@ -34,7 +34,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = () => {
       </p>
       <ul className="projects-list">
         <ProjectCard
-          name="Unnamed Writing App"
+          name="CouchWriter"
           slug="writing-app"
           techStack={["TypeScript", "Electron", "AWS & CouchDB"]}
           description="Rich-text editor with full offline support and cloud-syncing as well as local file editing functionality. Built with electron."

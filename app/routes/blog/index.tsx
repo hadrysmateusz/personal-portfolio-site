@@ -25,7 +25,6 @@ export default function Posts() {
 
   return (
     <PostsIndexWrapper>
-      {/*<h1>Posts</h1>*/}
       <ul>
         {posts.map(({ html, ...post }) => (
           <PostCard key={post.slug} {...post} />
@@ -56,22 +55,27 @@ const PostCard = (post: PostCardProps) => {
 const PostCardWrapper = styled.div`
   .meta-container {
     margin-top: var(--spacing__400);
+
     ${breakpoints.from.md`margin-top: 0;`}
-    
-    
     .category {
       font-size: var(--font_size__400);
       font-weight: 600;
       color: var(--color__accent);
       text-transform: uppercase;
     }
+
     .title {
       font-size: var(--font_size__600);
       font-weight: 700;
 
       margin-top: var(--spacing__300);
       margin-bottom: var(--spacing__400);
+
+      &:hover {
+        color: var(--color__text_700);
+      }
     }
+
     .description {
       color: var(--color__text_500);
       font-size: var(--font_size__500);
@@ -112,9 +116,21 @@ const PostCardWrapper = styled.div`
     .image-link {
       display: block;
       height: 11em;
+
       img {
         object-fit: cover;
         max-width: 300px;
+
+        background: var(--color__background_lighter);
+
+        border-radius: 3px;
+
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
         ${breakpoints.from.md`max-width: 360px;`}
         ${breakpoints.from.lg`max-width: 415px;`}
       }
@@ -125,6 +141,7 @@ const PostCardWrapper = styled.div`
 const PostsIndexWrapper = styled.div`
   width: 100%;
   margin: var(--spacing__800) 0;
+
   ul {
     display: grid;
     gap: var(--spacing__700);
