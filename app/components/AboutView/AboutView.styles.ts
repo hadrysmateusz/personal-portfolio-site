@@ -17,6 +17,6 @@ export const AboutViewWrapper = styled.div`
   }
 
   p {
-    margin: 0 0 var(--spacing__500) 0;
+    margin: 0 0 var(--spacing__300) 0;
   }
 `

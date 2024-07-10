@@ -55,7 +55,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = () => {
         {/*/>*/}
       </ul>
       <p>
-        Smaller projects like this portfolio site can be found on my{" "}
+        Smaller projects like this portfolio site and more can be found on my{" "}
         <a href={"https://github.com/hadrysmateusz"}>GitHub</a>.
       </p>
     </ProjectsViewWrapper>
